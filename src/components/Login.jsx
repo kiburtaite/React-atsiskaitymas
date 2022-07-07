@@ -4,9 +4,20 @@ const Login = () => {
 
 const flogin = (e) => {
     e.preventDefault();
-    fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/login")
+    const regUser = {
+        email: e.target.email.value,
+        password: e.target.password.value
+    }
+    fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/login", {
+      method : "POST",
+      headers : {
+        "Content-type" : "application/json",
+        "Accept" : "application/json plain/text "
+      },
+      body: JSON.stringify(regUser)
+    })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(response => console.log(response))
 };
 
     return (
