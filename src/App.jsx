@@ -16,20 +16,14 @@ const App = () => {
       setIsAuthenticated(true)
     }
   });
-
-  const PrivateRoutes = () => {
-    if(isAuthenticated){
-      return <Outlet/>
-    } else return <Navigate to="/login"/>
-  }
-
+  
   return (
     <div>
       <Nav type={isAuthenticated ? 1 : 0}/>
       <Routes>
         <Route path="register" element={<Register />}/>
         <Route path="login" element={<Login />}/>
-        <Route element={<PrivateRoutes/>}>
+        <Route element={isAuthenticated ? <Outlet/> : <Navigate to="/login"/>}>
               <Route path="/" element={<Home />} />
               <Route path="/add" element={<Add />} />
           </Route>
@@ -37,5 +31,6 @@ const App = () => {
     </div>
   )
 };
+
 
 export default App;
