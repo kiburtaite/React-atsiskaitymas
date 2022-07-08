@@ -5,7 +5,7 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const [token, setToken] = useState('');
+    const [token, setToken] = useState(null);
 
     useEffect(() => {
         localStorage.setItem('token', token)
