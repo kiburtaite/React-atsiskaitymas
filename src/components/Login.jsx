@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
     const navigate = useNavigate();
 
-    const [token, setToken] = useState(null);
-
-    useEffect(() => {
+    const addToken = ((token) => {
         localStorage.setItem('token', token)
-    }, [token]);
+    })
 
     const flogin = (e) => {
         e.preventDefault();
@@ -29,14 +26,16 @@ const Login = () => {
             if (!res.ok){
             throw Error(alert("Prisijungti nepavyko"))
             } else {
-                alert("Sėkmingai prisijungėte");
                 res.json()
                 .then(data => {
-                    setToken(data.token)
+                    addToken(data.token)
                 })
+                .then(alert("Sėkmingai prisijungėte"))
             }
         })
     };
+
+    
 
     return (
         <div className="main">
