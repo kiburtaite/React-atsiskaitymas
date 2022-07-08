@@ -39,7 +39,7 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className="main">
             <h1>Login</h1>
             <form onSubmit={flogin}>
                 <input type="email" name="email" placeholder="Įveskite el.paštą"/>

@@ -5,14 +5,14 @@ const Nav = ({type}) => {
     if (type === 0){
         return (
             <nav>
-                <img src={logo}/>
+                <img src={logo} alt="logo"/>
                 <Link to="/register">Register</Link>
                 <Link to="/login">Login</Link> 
             </ nav>
         )
     } else return (
         <nav>
-            <img src={logo}/>
+            <img src={logo} alt="logo"/>
             <Link to="/">Home</Link>
             <Link to="/add">Add</Link>
         </ nav>

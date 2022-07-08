@@ -32,7 +32,7 @@ const Add = () => {
     }; 
 
     return (
-        <div>
+        <div className="main">
             <h1>Add</h1>
             <form onSubmit={addEntry}>
                 <input type="text" name="title" placeholder="Įveskite pavadinimą"/>

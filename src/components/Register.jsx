@@ -29,7 +29,7 @@ const Register = () => {
     };
 
     return (
-        <div>
+        <div className="main">
             <h1>Register</h1>
             <form onSubmit={fregister}>
                 <input type="email" name="email" placeholder="Įveskite el.paštą"/>
