@@ -16,7 +16,7 @@ const Home = () => {
       })
       .then(res => res.json())
       .then(data => setData(data))
-  }, []);
+  });
 
   return (
     <div>

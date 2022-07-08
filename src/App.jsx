@@ -15,7 +15,7 @@ const App = () => {
     if(token){
       setIsAuthenticated(true)
     }
-  }, []);
+  });
 
   const PrivateRoutes = () => {
     if(isAuthenticated){
@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <Nav loggedIn={isAuthenticated}/>
+      <Nav type = {isAuthenticated ? 1 : 0}/>
       <Routes>
         <Route path="register" element={<Register />}/>
         <Route path="login" element={<Login />}/>

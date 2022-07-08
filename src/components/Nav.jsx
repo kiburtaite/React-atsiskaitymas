@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 
-const Nav = ({loggedIn}) => {
-    if (loggedIn){
+const Nav = (type) => {
+    if (type === 0){
         return (
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/add">Add</Link>
+                <Link to="/register">Register</Link>
+                <Link to="/login">Login</Link> 
             </ nav>
         )
     } else return (
         <nav>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Login</Link>
+            <Link to="/">Home</Link>
+            <Link to="/add">Add</Link>
         </ nav>
     )
 };
