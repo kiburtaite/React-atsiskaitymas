@@ -14,7 +14,7 @@ const Nav = ({type}) => {
         <nav>
             <img src={logo} alt="logo"/>
             <Link to="/"><span>Žodynas</span></Link>
-            <Link to="/add"><span>Pridėti_žodį</span></Link>
+            <Link to="/add"><span>Pridėti</span></Link>
         </nav>
     )
 };
