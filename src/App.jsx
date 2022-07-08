@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <Nav type = {isAuthenticated ? 1 : 0}/>
+      <Nav type={isAuthenticated ? 1 : 0}/>
       <Routes>
         <Route path="register" element={<Register />}/>
         <Route path="login" element={<Login />}/>

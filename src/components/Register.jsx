@@ -30,7 +30,7 @@ const Register = () => {
 
     return (
         <div className="main">
-            <h1>Register</h1>
+            <h1>Registruotis</h1>
             <form onSubmit={fregister}>
                 <input type="email" name="email" placeholder="Įveskite el.paštą"/>
                 <input type="password" name="password" placeholder="įveskite slaptažodį"/>

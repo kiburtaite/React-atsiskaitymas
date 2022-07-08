@@ -6,16 +6,16 @@ const Nav = ({type}) => {
         return (
             <nav>
                 <img src={logo} alt="logo"/>
-                <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link> 
-            </ nav>
+                <Link to="/register"><span>Registruotis</span></Link>
+                <Link to="/login"><span>Prisijungti</span></Link>
+            </nav>
         )
     } else return (
         <nav>
             <img src={logo} alt="logo"/>
-            <Link to="/">Home</Link>
-            <Link to="/add">Add</Link>
-        </ nav>
+            <Link to="/"><span>Žodynas</span></Link>
+            <Link to="/add"><span>Pridėti_žodį</span></Link>
+        </nav>
     )
 };
 

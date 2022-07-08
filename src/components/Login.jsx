@@ -40,7 +40,7 @@ const Login = () => {
 
     return (
         <div className="main">
-            <h1>Login</h1>
+            <h1>Prisijungti</h1>
             <form onSubmit={flogin}>
                 <input type="email" name="email" placeholder="Įveskite el.paštą"/>
                 <input type="password" name="password" placeholder="įveskite slaptažodį"/>

@@ -33,11 +33,11 @@ const Add = () => {
 
     return (
         <div className="main">
-            <h1>Add</h1>
+            <h1>Pridėti naują žodį</h1>
             <form onSubmit={addEntry}>
-                <input type="text" name="title" placeholder="Įveskite pavadinimą"/>
-                <input type="textarea" name="description" placeholder="Įveskite aprašymą"/>
-                <button type="submit">Pridėti</button>
+                <input type="text" name="title" placeholder="Įveskite naują žodį"/>
+                <input type="textarea" name="description" placeholder="Įveskite žodžio reikšmę"/>
+                <button type="submit">Pridėti žodį</button>
             </form>
         </div>
     )

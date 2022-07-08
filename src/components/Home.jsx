@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="main">
-      <h1>Home page</h1>
+      <h1>Žodynas</h1>
       {
       !data ? 
       <p>Loading...</p> :
