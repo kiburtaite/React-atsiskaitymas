@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 
 const Add = () => {
+
+    const navigate = useNavigate();
 
     const [token, setToken] = useState(localStorage.getItem('token'));
 
@@ -24,7 +27,8 @@ const Add = () => {
             if (!res.ok){
             throw Error(alert("Nepavyko pridėti naujo įrašo"))
             } else {
-                alert("Įrašas sėkmingai pridėtas")
+                alert("Įrašas sėkmingai pridėtas");
+                navigate("/")
             }
         })
     }; 

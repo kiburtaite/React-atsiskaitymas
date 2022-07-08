@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     const [token, setToken] = useState(null);
 
@@ -29,7 +32,9 @@ const Login = () => {
             } else {
                 alert("Sėkmingai prisijungėte");
                 res.json()
-                .then(data => setToken(data.token))
+                .then(data => {
+                    setToken(data.token)
+                })
             }
         })
     };

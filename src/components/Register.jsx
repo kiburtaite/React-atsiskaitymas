@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import Nav from './Nav';
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const fregister = (e) => {
         e.preventDefault();
@@ -20,7 +23,8 @@ const Register = () => {
             if (!res.ok){
             throw Error(alert("Registracija nesėkminga"))
             } else {
-                alert("Sėkmingai prisiregistravote")
+                alert("Sėkmingai prisiregistravote");
+                navigate("/login")
             }
         })
     };
