@@ -15,10 +15,7 @@ const Home = () => {
         }
       })
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setData(data)
-      })
+      .then(data => setData(data))
   }, []);
 
   return (
