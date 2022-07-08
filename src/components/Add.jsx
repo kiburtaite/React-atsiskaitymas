@@ -20,6 +20,13 @@ const Add = () => {
         },
         body: JSON.stringify(newEntry)
         })
+        .then(res => {
+            if (!res.ok){
+            throw Error(alert("Nepavyko pridėti naujo įrašo"))
+            } else {
+                alert("Įrašas sėkmingai pridėtas")
+            }
+        })
     }; 
 
     return (

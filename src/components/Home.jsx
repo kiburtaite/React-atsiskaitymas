@@ -31,7 +31,12 @@ const Home = () => {
       <p>Loading...</p> :
       data.length === 0 ? 
       <p>Įrašų nėra</p> :
-      <p>Data</p>
+      data.map(entry => 
+        <div key={entry.id}>
+          <h3>{entry.title}</h3>
+          <p>{entry.description}</p>
+        </div>
+      )
       }
 
     </div>
