@@ -16,13 +16,14 @@ const Home = () => {
       })
       .then(res => {
         if (!res.ok){
-          throw Error(console.log("Klaida"))
+          throw Error("Nepavyko atsisiųsti duomenų iš serverio")
           } else {
               res.json()
               .then(data => setData(data))
           }
         }
       )
+      .catch(err => {console.log(err.message)})
   });
 
   return (
