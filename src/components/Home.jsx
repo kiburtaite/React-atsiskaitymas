@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const Home = () => {
 
   const [data, setData] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     fetch('https://autumn-delicate-wilderness.glitch.me/v1/content/skills', {

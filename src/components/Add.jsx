@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Add = () => {
 
     const navigate = useNavigate();
 
-    const [token, setToken] = useState(localStorage.getItem('token'));
+    const token = localStorage.getItem('token');
 
     const addEntry = (e) => {
         e.preventDefault();
