@@ -1,24 +1,38 @@
+import { useEffect, useState } from 'react';
 import Nav from './Nav';
 
 const Login = () => {
 
-const flogin = (e) => {
-    e.preventDefault();
-    const regUser = {
-        email: e.target.email.value,
-        password: e.target.password.value
-    }
-    fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/login", {
-      method : "POST",
-      headers : {
-        "Content-type" : "application/json",
-        "Accept" : "application/json plain/text "
-      },
-      body: JSON.stringify(regUser)
-    })
-    .then(res => res.json())
-    .then(response => console.log(response))
-};
+    const [token, setToken] = useState(null);
+
+    useEffect(() => {
+        localStorage.setItem('token', token)
+    }, [token]);
+
+    const flogin = (e) => {
+        e.preventDefault();
+        const regUser = {
+            email: e.target.email.value,
+            password: e.target.password.value
+        }
+        fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/login", {
+        method : "POST",
+        headers : {
+            "Content-type" : "application/json",
+            "Accept" : "application/json plain/text "
+        },
+        body: JSON.stringify(regUser)
+        })
+        .then(res => {
+            if (!res.ok){
+            throw Error(alert("Prisijungti nepavyko"))
+            } else {
+                alert("Sėkmingai prisijungėte");
+                res.json()
+                .then(data => setToken(data.token))
+            }
+        })
+    };
 
     return (
         <div>

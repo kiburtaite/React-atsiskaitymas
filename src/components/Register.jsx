@@ -2,21 +2,28 @@ import Nav from './Nav';
 
 const Register = () => {
 
-const fregister = (e) => {
-    e.preventDefault();
-    const newUser = {
-        email: e.target.email.value,
-        password: e.target.password.value
-    }
-    fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/register", {
-      method : "POST",
-      headers : {
-        "Content-type" : "application/json",
-        "Accept" : "application/json plain/text "
-      },
-      body: JSON.stringify(newUser)
-    })
-};
+    const fregister = (e) => {
+        e.preventDefault();
+        const newUser = {
+            email: e.target.email.value,
+            password: e.target.password.value
+        }
+        fetch("https://autumn-delicate-wilderness.glitch.me/v1/auth/register", {
+        method : "POST",
+        headers : {
+            "Content-type" : "application/json",
+            "Accept" : "application/json plain/text "
+        },
+        body: JSON.stringify(newUser)
+        })
+        .then(res => {
+            if (!res.ok){
+            throw Error(alert("Registracija nesėkminga"))
+            } else {
+                alert("Sėkmingai prisiregistravote")
+            }
+        })
+    };
 
     return (
         <div>
