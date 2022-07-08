@@ -35,7 +35,7 @@ const Add = () => {
 
     return (
         <div>
-            <Nav />
+            <Nav loggedIn="true"/>
             <h1>Add</h1>
             <form onSubmit={addEntry}>
                 <input type="text" name="title" placeholder="Įveskite pavadinimą"/>

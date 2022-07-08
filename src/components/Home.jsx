@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <div>
-      <Nav />
+      <Nav loggedIn="true"/>
       <h1>Home page</h1>
       {
       !data ? 
