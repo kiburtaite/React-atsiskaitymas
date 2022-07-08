@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Nav from './Nav';
 
 const Home = () => {
 
@@ -24,7 +23,6 @@ const Home = () => {
 
   return (
     <div>
-      <Nav loggedIn="true"/>
       <h1>Home page</h1>
       {
       !data ? 

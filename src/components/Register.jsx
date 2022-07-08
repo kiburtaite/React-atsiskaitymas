@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import Nav from './Nav';
 
 const Register = () => {
 
@@ -31,7 +30,6 @@ const Register = () => {
 
     return (
         <div>
-            <Nav />
             <h1>Register</h1>
             <form onSubmit={fregister}>
                 <input type="email" name="email" placeholder="Įveskite el.paštą"/>

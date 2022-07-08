@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Nav from './Nav';
 
 const Login = () => {
 
@@ -41,7 +40,6 @@ const Login = () => {
 
     return (
         <div>
-            <Nav/>
             <h1>Login</h1>
             <form onSubmit={flogin}>
                 <input type="email" name="email" placeholder="Įveskite el.paštą"/>
