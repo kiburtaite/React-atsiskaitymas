@@ -3,19 +3,38 @@ import Nav from './Nav';
 
 const Home = () => {
 
-const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
 
-useEffect(() => {
-  fetch('https://autumn-delicate-wilderness.glitch.me/v1/content/skills')
-    .then(res => res.json())
-    .then(data => {setData(data); console.log(data)})
-}, []);
+  useEffect(() => {
+    fetch('https://autumn-delicate-wilderness.glitch.me/v1/content/skills', {
+      method : "GET",
+      headers : {
+          "Content-type" : "application/json",
+          "Accept" : "application/json plain/text ",
+          "Authorization": `Bearer ${token}`
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        setData(data)
+      })
+  }, []);
 
-return (
-  <div>
-    <Nav />
-    <h1>Home page</h1>
-  </div>
+  return (
+    <div>
+      <Nav />
+      <h1>Home page</h1>
+      {
+      !data ? 
+      <p>Loading...</p> :
+      data.length === 0 ? 
+      <p>Įrašų nėra</p> :
+      <p>Data</p>
+      }
+
+    </div>
   )
 };
 
