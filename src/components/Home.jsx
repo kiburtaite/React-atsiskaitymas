@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
   const [data, setData] = useState(null);
   const token = localStorage.getItem('token');
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('https://autumn-delicate-wilderness.glitch.me/v1/content/skills', {
@@ -18,7 +16,7 @@ const Home = () => {
       })
       .then(res => {
         if (!res.ok){
-          throw Error(navigate("/login"))
+          throw Error(console.log("Klaida"))
           } else {
               res.json()
               .then(data => setData(data))

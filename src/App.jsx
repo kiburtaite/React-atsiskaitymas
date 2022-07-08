@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
 import Add from './components/Add';
+import NotFound from './components/NotFound';
 
 const App = () => {
 
@@ -15,7 +16,7 @@ const App = () => {
     if(token){
       setIsAuthenticated(true)
     }
-  });
+  }, [isAuthenticated]);
   
   return (
     <div>
@@ -26,7 +27,8 @@ const App = () => {
         <Route element={{isAuthenticated} ? <Outlet/> : <Navigate to="/login"/>}>
               <Route path="/" element={<Home />} />
               <Route path="/add" element={<Add />} />
-          </Route>
+        </Route>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </div>
   )

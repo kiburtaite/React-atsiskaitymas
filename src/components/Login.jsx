@@ -27,10 +27,9 @@ const Login = () => {
             throw Error(alert("Prisijungti nepavyko"))
             } else {
                 res.json()
-                .then(data => {
-                    addToken(data.token)
-                })
+                .then(data => addToken(data.token))
                 .then(alert("Sėkmingai prisijungėte"))
+                .then(navigate("/"))
             }
         })
     };
