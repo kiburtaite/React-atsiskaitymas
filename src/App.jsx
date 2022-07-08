@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Nav from './components/Nav';
 import Home from './components/Home';
@@ -17,14 +17,22 @@ const App = () => {
     }
   }, []);
 
+  const PrivateRoutes = () => {
+    if(isAuthenticated){
+      return <Outlet/>
+    } else return <Navigate to="/login"/>
+  }
+
   return (
     <div>
-      <Nav />
+      <Nav loggedIn={isAuthenticated}/>
       <Routes>
-        <Route path="/" element={<Home />}/>
         <Route path="register" element={<Register />}/>
         <Route path="login" element={<Login />}/>
-        <Route path="add" element={<Add />}/>
+        <Route element={<PrivateRoutes/>}>
+              <Route path="/" element={<Home />} />
+              <Route path="/add" element={<Add />} />
+          </Route>
       </Routes>
     </div>
   )
