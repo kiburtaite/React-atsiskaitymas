@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+
+nav{
+    margin: 0 auto;
+    height: 100px;
+    width: 80%;
+    background-color: rgb(30, 200, 230);
+}
+
+img{
+    height: 100px
+}
+
+h1, p{
+    color:rgb(30, 200, 230);
+}
